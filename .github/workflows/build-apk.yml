@@ -28,11 +28,10 @@ jobs:
           channel: 'stable'
           cache: true
 
-          
-- name: Gradle einrichten
-  uses: gradle/actions/setup-gradle@v3
-  with:
-    gradle-version: 8.6
+      - name: Gradle einrichten
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.13
 
       - name: local.properties vorbereiten
         run: |
@@ -43,7 +42,7 @@ jobs:
           cd android
           # Erzeugt gradlew/gradlew.bat + den passenden Wrapper-JAR,
           # passend zur in gradle-wrapper.properties hinterlegten Version.
-          gradle wrapper --gradle-version 8.6
+          gradle wrapper --gradle-version 8.13
           chmod +x gradlew
 
       - name: Abhängigkeiten laden
@@ -55,6 +54,3 @@ jobs:
       - name: APK als Download bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: lernapp-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
-          retention-days: 30
