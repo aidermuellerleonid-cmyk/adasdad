@@ -28,8 +28,10 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Gradle einrichten
-        uses: gradle/actions/setup-gradle@v3
+- name: Gradle einrichten
+  uses: gradle/actions/setup-gradle@v3
+  with:
+    gradle-version: 8.6
 
       - name: local.properties vorbereiten
         run: |
