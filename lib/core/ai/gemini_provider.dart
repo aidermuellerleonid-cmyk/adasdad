@@ -11,7 +11,7 @@ class GeminiProvider implements AiProvider {
   final String apiKey;
   final String model;
 
-  GeminiProvider({required this.apiKey, this.model = 'gemini-2.0-flash'});
+  GeminiProvider({required this.apiKey, this.model = 'gemini-3.8-flash'});
 
   @override
   String get name => 'Google Gemini';
